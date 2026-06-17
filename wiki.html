@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario la Era del Mundo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .portada {
+            font-family: "Pirata One", cursive;
+            font-size: 6rem;
+            text-align: center;
+    
+            margin-top: -10px;
+            margin-bottom: 50px;
+
+            background: linear-gradient(
+                180deg,
+                #d4d8dc 0%,
+                #a8afb5 25%,
+                #7f868c 45%,
+                #555c62 50%,
+                #7f868c 55%,
+                #a8afb5 75%,
+                #d4d8dc 100%
+            );
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 1px #1c1f21;
+        }
+
+        .cabecera{
+            width:fit-content;
+            margin:auto;
+            padding:20px 60px;
+
+            background:linear-gradient(
+                180deg,
+                #f5f5f5,
+                #d8d8d8
+            );
+
+            border-radius:15px;
+
+            box-shadow:
+                0 0 20px rgba(0,0,0,0.15);
+        }
+
+        .marco{
+            text-align:center;
+            margin:5px auto;
+            max-width:700px;
+            border-top:2px solid #7c8288;
+            border-bottom:2px solid #7c8288;
+            padding:10px 0;
+        }
+        
+        .adorno{
+            text-align:center;
+            font-size:2rem;
+            color:#7c8288;
+            margin:-50px 0 5px 0;
+        }
+
+        .portada::after{
+            content:"";
+            display:block;
+            width:300px;
+            height:3px;
+            margin:5px auto;
+            background:linear-gradient(
+                90deg,
+                transparent,
+                #7c8288,
+                transparent
+            );
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: #f4f4f4;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            background: #e0e0e0;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .tab-button:hover {
+            background: #0078d7;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0,120,215,0.3);
+        }
+
+        .tab-button.active {
+            background: #0078d7;
+            color: white;
+            box-shadow: 0 5px 12px rgba(0,120,215,0.4);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            min-height: 300px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .subseccion {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .sub-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            background: #e0e0e0;
+            color: #333;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            margin: 5px;
+        }
+
+        .sub-button:hover {
+            background: #0078d7;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .sub-button.active {
+            background: #0078d7;
+            color: white;
+        }
+
+        .titulo-fantasia {
+            font-family: "Uncial Antiqua", cursive;
+            font-weight: normal;
+            text-align: center;
+            letter-spacing: 2px;
+            color: #000000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .sub-adorno{
+            text-align:center;
+            font-size:2rem;
+            color:#000000;
+            margin:-10px 0 5px 0;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+        p {
+            text-align: justify;
+            font-family: Georgia, serif;
+            text-indent: 2em;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="marco">
+            <h1 class="portada" style="text-align: center;">LA ERA DEL MITO</h1>
+            <div class="adorno">✦ ❖ ✦</div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('mapas')">Mapas</button>
+        <button class="tab-button" onclick="openTab('lore')">Lore</button>
+        <button class="tab-button" onclick="openTab('personajes')">Personajes</button>
+    </div>
+
+    <div id="mapas" class="tab-content active">
+        <h2>Mapas</h2>
+        <p>Aquí puedes mostrar mapas, imágenes o descripciones de regiones y territorios.</p>
+    </div>
+
+    <div id="lore" class="tab-content">
+        
+        <button class="sub-button" onclick="mostrarSeccion('historia')">Historia</button>
+        <button class="sub-button" onclick="mostrarSeccion('textos')">Textos</button>
+        <button class="sub-button" onclick="mostrarSeccion('enciclopedia')">Enciclopedia</button>
+
+        <div id="historia" class="subseccion">
+            <hr>
+            <div class="sub-adorno">✦ ❖ ✦</div>
+            <h2 style="text-align: center; "class="titulo-fantasia">Prologo: Un Viento Calido</h2>
+            <p>Una brisa sopló sobre la costa de Coran Fair arrastrando el olor a salitre. No se conoce el momento exacto cuando el mundo empezó a cambiar, pero esa brisa fue un comienzo. Cargada con un resquicio de magia la brisa flotaba por entre las calles del muelle, cruzó la plaza y se arremolinó alrededor de la reina Tyringail.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Tyringail sintió un suave toque en la espalda y un aire caliente que se elevaba al cielo, levantó la mirada y vio un cielo completamente despejado, aun así sintió que se aproximaba una tormenta. No resultaba extraño sentirse de ese modo, desde hacía unos cuantos meses el clima había empeorado y los granos habían empezado a encarecerse a causa de la escasez. Mantener un reino no era tarea fácil, menos aún cuando se trataba de un pequeño pueblo marginal que se encontraba casi en las garras de una nación mayor como lo era Aladrin.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Con un suspiro intentó quitarse la pesadez del cuerpo y se dirigió hacia el Palacio de Máfil, por norma general no llevaba a su guardia de honor cuando salía a la plaza, Coran Fair no era una ciudad peligrosa en el sentido de tener bandidos o ladronzuelos, pero en su camino al palacio, mientras giraba por una callejuela para evitar las multitudes pudo atisbar por el rabillo de ojo como un sujeto la perseguía. Haciendo gala de un semblante imperturbable siguió caminando, fingiendo no haberse dado por enterada, mayor fue su temor cuando otro hombre salió al paso y la encerró. El segundo hombre tenia un garrote en la mano.</P>
+
+            <P>Ber’Hom era apenas un joven, es cierto que tenía ya 94 años, pero eso era apenas una minucia para los Margor, sin embargo, él quería ver el mundo, viajar y vivir aventuras, lastima que al ser un jovencito entre los suyos no tuviera permitido salir de la arboleda.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Una noche un brisa cálida abrió la ventana de su cuarto, al levantarse para cerrarla vio como más allá de las copas de los árboles en el cielo nocturno cientos, no, miles de luces de colores estallaba y teñían la noche, el espectáculo duró apenas unos segundos en los que Ber’Hom vio figuras, formas y sintió que empezaba a comprender la naturaleza del mundo.</P>
+
+            <p>La voz retumbó en la cabeza de Balhaon, no, no era una voz, sería más preciso describirla como el chirrido que producen dos rocas al golpearse.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;– La prisión se ha resquebrajado, el primero de mis elegidos ha sido liberado, mis manos vuelven a recorrer las tierras.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Un temblor recorría el cuerpo de Balhaon, un mezcla de terror y entusiasmo, La Sombra estaba le estaba hablando de nuevo, habían pasado milenios desde la última vez, antes de que todos los elegidos y la sombra fueran apresados por la coalición de las grandes compañías.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;– Tu cumplirás mi voluntad en la tierra, ve, planta el germen de la sombra en el mundo – continuó la voz.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;– Así será mi señor.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Permaneció con la rodilla hincada en el piso durante un rato más, estaba pletórico de felicidad, había sido el primero de los elegidos en despertar, tendría ventaja para ser el elegido entre los elegidos, aquel que gobernara una vez La Sombra ganase la Batalla del Fin de los días.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Finalmente se puso de pie, abrió un tajo en el aire, un corte en la realidad, un marco reluciente se alzó frente a él, el aire oscilaba a su alrededor profiriendo un tono etéreo, al otro lado del marco se podía observar una gran urbe, no tan grande como las que habían existido en su tiempo, pero sería un buen lugar de partida.
+            </p>
+
+            <hr>
+            <div class="sub-adorno">✦ ❖ ✦</div>
+            <h2 style="text-align: center; "class="titulo-fantasia">Capitulo 1, parte 1: Tres Chispas</h2>
+            <p>
+            La doncella del mar era un albergue pequeño, aun así lo había escogido por ser el único que tenía una cama para Margor en toda la ciudad, no era un requerimiento necesario, pero al enterarse de que esa cama existía no pudo más que emocionarse, era sorprendente que un objeto de la época previa a que los Margor se recluyeran en las Arboledas siguiera existiendo, habían pasado mil años desde la última devastación y esa cama seguía igual de firme, eso le hizo preguntarse, ¿seria que otros objetos de eras pasadas seguían existiendo en el mundo?, ¿Alguien podría usar un objeto y al reencarnar en la siguiente era volver a encontrarse con él?.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Las preguntas que le surgían a causa de explorar el mundo eran deliciosas, pero eso no era lo que le habia traido hasta Coran Fair. La pequeña ciudad costera era una que pese a su reducido tamaño albergaba una gran biblioteca en palacio nutrida por los relatos de los primeros migrantes y los textos de los antiguos sabios Margor, gentes que entendía la urdimbre de la realidad, memorias preservadas de una época de la que solo quedaban resquicios.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Ber’hom ya se había acercado al palacio una vez a solicitar entrar en la biblioteca, pero los guardias lo rechazaron y le dijeron que necesitaba un permiso, permiso del cual obviamente carecía, y para el cual requeriria una audiencia con la reina la cual tardaría mucho en ocurrir. Esa mañana se dirigía hacia el palacio a realizar un nuevo intento cuando vio a lo lejos a la reina. se encaminó en su dirección, quizá podría darle acceso al presentarle sus motivos y se saltaría el molesto protocolo. De repente cuatro figuras con el rostro velado se abalanzaron sobre la reina. Eran Phar’Mir, corrían rumores peligrosos sobre ellos, Ber’hom pensó en lanzarse en su ayuda pero no podría hacer mucho sin recurrir a la violencia. De repente aparecieron tres individuos, parecian personas comunes, y un cuarto que venia de la dirección del palacio, destellos, chispas de colores se arremolinaban a su alrededor.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Las ahora cuatro personas, al ver que la reina estaba en peligro, se lanzaron en su ayuda, otro destello, chispas de colores saltaron de los primeros tres individuos, las chispas saltaban de uno a otro, se conectaban, los guiaban.
+            </p>
+            <p>
+            Faral Mor estaba molesto, acababa de tener una audiencia con el secretario de la reina y no le había dado ninguna solución frente al problema de los retenes de mercancía en los muelles de Aladrin, como se suponía que un mercader pudiera vivir si toda su mercancía era secuestrada por otro país y la reina no hacía nada para menguar el problema.<br> 
+            &nbsp;&nbsp;&nbsp;&nbsp;Bajó el largo puente de la entrada del palacio hasta las calles de Coran Fair, se encontraba ensimismado en sus pensamientos cuando escuchó un grito: «¿Quién os envía? Alejaos», en ese momento agarró la espada que le colgaba del cinto y corrió en dirección del sonido.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Al cruzar la esquina de una de las casas se encontró con una gran concentración de personas, cuatro hombres altos con el rostro velado  rodeaban a otros dos jóvenes que parecían estar protegiendo a una mujer, no, no era cualquier mujer, era la reina Tyringail.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Espada en mano se abalanzó sobre el primero de ellos por la espalda, no acertó, el hombre giró sobre sí mismo y le dio una patada que envió a Faral hacia atrás. Los otros tres encapuchados atacaron en dirección a la reina los tres extraños los interceptaron con sus propias armas, pero los encapuchados eran más hábiles, poco a poco iban ganando terreno.
+            </p>
+
+            <p>
+            Tyringail se recuperó de la conmoción, sacó un cuchillo de la manga del vestido y lo lanzó directo a la cabeza de un de los atacantes, el hombre lo esquivó por poco, pero el cuchillo alcanzó a cortarle una de las mejillas y con ello el velo que le cubría el rostro cayó, entonces una melena roja quedó a la vista, ¿Phar’Mir? ¿Qué hacían en la ciudad?¿Por qué la atacaban? Habían llegado rumores de campamentos al norte en el camino hacia Alforan, pero no eran gentes que no se solían involucrar con las personas de ciudad. Antes de darse cuenta uno de los hombres había sobrepasado el forcejeo y dirigía un corte en su dirección, logró rodar sobre sí misma hacia el costado y esquivar el corte, si bien su vestido se había visto rasgado. Uno de los hombres que había acudido en su ayuda embistió al atacante. Tyringail vio como más allá de los tres hombres que luchaban contra los atacantes más próximos se encontraba uno de los mercaderes de la ciudad, estaba en una lucha bastante igualada con el encapuchado, Tyringail le lanzó el otro cuchillo que llevaba en la manga, el tiro iba a la cabeza pero falló, y le terminó acertando en un brazo, aún así fue suficiente para que vacilara y el mercader lo atravesara con su espada, el mercader salió corriendo en dirección a ella, pero a su lado cayeron los tres hombres, no se había percatado que estaban perdiendo sus duelos, los atacantes se acercaron con los garrotes en alto, al fondo corría el mercader gritando a la par que alzaba su espada. Tyringail volvió a sentir la brisa cálida revolotear.
+            </p>
+
+            <p>
+            Ber’hom vio como unas pequeñas chispas saltaban entre los hombres, al principio muy pocas y diminutas, cuando los derribaron, las chispas de colores empezaron a salir a borbotones, una marea de colores los rodeaba y saltaba entre ellos, de repente todas las chispas salieron disparadas a los agresores, primero se formó un corte en el aire, brillante y limpio, rápidamente el corte se extendió y formó una grieta, del otro lado de la grita se veía un bosque, una gran brisa succiono a los encapuchados hacia la grita y después de devorarlos se cerró. Ber’hom acababa de presenciar una brecha en el entramado de la realidad.            
+            </p>
+            <hr>
+        </div>
+
+        <div id="textos" class="subseccion">
+            <p>Información sobre los reinos.</p>
+        </div>
+
+        <div id="enciclopedia" class="subseccion">
+            <p>Información sobre las ciudades.</p>
+        </div>
+
+
+    </div>
+
+    <div id="personajes" class="tab-content">
+        <h2>Personajes</h2>
+        <p>Aquí puedes listar personajes, sus descripciones, relaciones y biografías.</p>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+
+            event.target.classList.add('active');
+        }
+
+        function mostrarSeccion(id) {
+
+            document.querySelectorAll('.subseccion')
+                .forEach(sec => sec.style.display = 'none');
+
+            document.querySelectorAll('.sub-button')
+                .forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(id).style.display = 'block';
+
+            event.target.classList.add('active');
+        }
+
+    </script>
+
+</body>
+</html>
