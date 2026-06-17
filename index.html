@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario la Era del Mito</title>
+    <link rel="icon" type="image/png" href="imagenes/varios/Logo.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
             margin: 0;
             background-color: #f4f4f4;
+        }
+        
+        .logo-esquina_izq{
+            position: absolute;
+            top: 20px;
+            left: 240px;
+            width: 150px;
+        }
+        .logo-esquina_der{
+            position: absolute;
+            top: 20px;
+            right: 240px;
+            width: 150px;
+            transform: scaleX(-1);
         }
 
         .portada {
@@ -178,6 +194,42 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
 
+        .galeria_personajes{
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+            gap:100px;
+        }
+
+        .galeria_atlas{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:100px;
+        }
+
+        .tarjeta{
+            cursor:pointer;
+            text-align:center;
+        }
+
+        .tarjeta img{
+            width:70%;
+            aspect-ratio:1/1;
+            object-fit:cover;
+        }
+
+        .detalle_personaje{
+            display:none;
+        }
+
+        .detalle_atlas{
+            display:none;
+        }
+
+        .detalle_atlas img{
+            max-width: 65%;
+            height: auto;
+        }
+
         h2 {
             margin-top: 0;
         }
@@ -187,9 +239,19 @@
             text-indent: 2em;
         }
 
+        p.sin-sangria{
+            text-align: justify;
+            font-family: Georgia, serif;
+            text-indent: 0;
+        }
+
     </style>
+
 </head>
 <body>
+    
+    <img src="imagenes/varios/Logo.png" class="logo-esquina_izq" alt="Logo">
+    <img src="imagenes/varios/Logo.png" class="logo-esquina_der" alt="Logo">
     
     <div class="marco">
             <h1 class="portada" style="text-align: center;">LA ERA DEL MITO</h1>
@@ -198,8 +260,8 @@
 
     <div class="tabs">
         <button class="tab-button" onclick="openTab('lore')">Lore</button>
-        <button class="tab-button" onclick="openTab('personajes')">Personajes</button>
-        <button class="tab-button active" onclick="openTab('atlas')">Atlas</button>
+        <button class="tab-button active" onclick="openTab('personajes')">Personajes</button>
+        <button class="tab-button" onclick="openTab('atlas')">Atlas</button>
     </div>
 
 
@@ -256,24 +318,83 @@
         </div>
 
         <div id="textos" class="subseccion">
-            <p>Información sobre los reinos.</p>
+            <p> Sección en obras.</p>
         </div>
 
         <div id="enciclopedia" class="subseccion">
-            <p>Información sobre las ciudades.</p>
+            <p> Sección en obras.</p>
         </div>
 
 
     </div>
 
-    <div id="personajes" class="tab-content">
-        <h2>Personajes</h2>
-        <p>Aquí puedes listar personajes, sus descripciones, relaciones y biografías.</p>
+    <div id="personajes" class="tab-content active">
+
+        <section id="personajes_opciones" class="galeria_personajes">
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj1')">
+                <img src="imagenes/personajes/Faral.png" alt="">
+                <p  class="sin-sangria" style="text-align: center;"><b>
+                    Faral Mor
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj2')">
+                <img src="imagenes/personajes/Tyringail.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Tyringail Torrin
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj3')">
+                <img src="imagenes/personajes/berhom.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Ber'hom
+                </b></p>
+            </div>
+
+        </section>
+
+        <section id="pj1" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Faral Mor</b></h1>
+            <p>Información del proyecto 1.</p>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <section id="pj2" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Tyringail Torrin</b></h1>
+            <p>Información del proyecto 2.</p>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <section id="pj3" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Ber'hom</b></h1>
+            <p>Información del proyecto 3.</p>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
     </div>
     
-    <div id="atlas" class="tab-content active">
-        <h2>Atlas</h2>
-        <p>Aquí puedes mostrar mapas, imágenes o descripciones de regiones y territorios.</p>
+    <div id="atlas" class="tab-content">
+        
+        <section id="atlas_opciones" class="galeria_atlas">
+            <div class="tarjeta" onclick="mostrarDetalle_atlas('img1')">
+                <img src="imagenes/atlas/Mapa_Continente.jpg" alt="">
+                <p  class="sin-sangria" style="text-align: center;"><b>
+                    Mapa del mundo
+                </b></p>
+            </div>
+        </section>
+
+        <section id="img1" class="detalle_atlas">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Mapa del mundo</b></h1>
+            <img src="imagenes/atlas/Mapa_Continente.jpg" style="display: block; margin: auto;" alt="">
+            <p>El continente actualmente se encuentra dividido en 5 naciones y una ciudad-estado que reciben el nombre de sus capitales; aún así, las dos ruinas de 2 grandes ciudades del pasado han congregado nuevas civilizaciones a su alrededor. Además de las ciudades humanas en el continente se encuentran las 4 Arboledas Margor, una por cada punto cardinal, cada una de ellas fuertemente arraigada desde hace muchas eras.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Fuera del continente, pero anexa a este, en el Mar de las Tormentas se encuentra una isla muy reservada, tierra natal de los Mathar'Vein, quienes viajan a las tierras continentales para hacer negocios, pero mantienen su isla completamente hermética para los extranjeros.
+            </p>
+            <button class="sub-button" onclick="volver_atlas()">Regresar</button>
+        </section>
+
     </div>
 
     <script>
@@ -300,6 +421,47 @@
             document.getElementById(id).style.display = 'block';
 
             event.target.classList.add('active');
+        }
+
+
+        function mostrarDetalle_personajes(id){
+
+            document.getElementById("personajes_opciones").style.display = "none";
+
+            document.querySelectorAll(".detalle_personaje").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        function volver_personajes(){
+
+            document.querySelectorAll(".detalle_personaje").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById("personajes_opciones").style.display = "grid";
+        }
+
+        function mostrarDetalle_atlas(id){
+
+            document.getElementById("atlas_opciones").style.display = "none";
+
+            document.querySelectorAll(".detalle_atlas").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        function volver_atlas(){
+
+            document.querySelectorAll(".detalle_atlas").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById("atlas_opciones").style.display = "grid";
         }
 
     </script>
