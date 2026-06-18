@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Generalidades -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diario la Era del Mito</title>
     <link rel="icon" type="image/png" href="imagenes/varios/Logo.png">
 
+    <!-- Importaciones -->
     <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
 
+
+    <!-- Objetos de CSS -->
     <style>
         body {
             font-family: Georgia, serif;
@@ -148,6 +152,18 @@
             display: block;
         }
 
+        .tab-content-resourcepack {
+            display: none;
+            text-align: center;
+            padding-top: 100px;
+            background-color: white;
+            min-height: 150px;
+        }
+
+        .tab-content-resourcepack.active {
+            display: block;
+        }
+
         .subseccion {
             display: none;
             margin-top: 20px;
@@ -185,6 +201,14 @@
             color: #000000;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
+        
+        .titulo-fantasia_nocentro {
+            font-family: "Uncial Antiqua", cursive;
+            font-weight: normal;
+            letter-spacing: 2px;
+            color: #000000;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
 
         .sub-adorno{
             text-align:center;
@@ -203,7 +227,13 @@
         .galeria_atlas{
             display:grid;
             grid-template-columns:repeat(3,1fr);
-            gap:100px;
+            gap:50px;
+        }
+
+        .galeria_textos{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:50px;
         }
 
         .tarjeta{
@@ -230,6 +260,10 @@
             height: auto;
         }
 
+        .detalle_textos{
+            display:none;
+        }
+
         h2 {
             margin-top: 0;
         }
@@ -249,32 +283,37 @@
 
 </head>
 <body>
-    
+
+    <!-- Cabecera -->
     <img src="imagenes/varios/Logo.png" class="logo-esquina_izq" alt="Logo">
     <img src="imagenes/varios/Logo.png" class="logo-esquina_der" alt="Logo">
-    
     <div class="marco">
             <h1 class="portada" style="text-align: center;">LA ERA DEL MITO</h1>
             <div class="adorno">✦ ❖ ✦</div>
     </div>
-
+    
+    <!-- Botones de Tabs -->
     <div class="tabs">
         <button class="tab-button" onclick="openTab('lore')">Lore</button>
         <button class="tab-button active" onclick="openTab('personajes')">Personajes</button>
         <button class="tab-button" onclick="openTab('atlas')">Atlas</button>
+        <button class="tab-button" onclick="openTab('actualizacion')">Actualizaciones</button>
+        <button class="tab-button" onclick="openTab('resourcepack')">Resourcepack</button>
     </div>
 
-
+    <!-- Tab de Lore -->  
     <div id="lore" class="tab-content">
         
         <button class="sub-button" onclick="mostrarSeccion('historia')">Historia</button>
         <button class="sub-button" onclick="mostrarSeccion('textos')">Textos</button>
         <button class="sub-button" onclick="mostrarSeccion('enciclopedia')">Enciclopedia</button>
 
+
+        <!-- Sub-tab de historia principal -->  
         <div id="historia" class="subseccion">
             <hr>
             <div class="sub-adorno">✦ ❖ ✦</div>
-            <h2 style="text-align: center; "class="titulo-fantasia">Prologo: Un Viento Calido</h2>
+            <h2 style="text-align: center; "class="titulo-fantasia">Prologo: Un Viento Cálido</h2>
             <p>Una brisa sopló sobre la costa de Coran Fair arrastrando el olor a salitre. No se conoce el momento exacto cuando el mundo empezó a cambiar, pero esa brisa fue un comienzo. Cargada con un resquicio de magia la brisa flotaba por entre las calles del muelle, cruzó la plaza y se arremolinó alrededor de la reina Tyringail.<br>
             &nbsp;&nbsp;&nbsp;&nbsp;Tyringail sintió un suave toque en la espalda y un aire caliente que se elevaba al cielo, levantó la mirada y vio un cielo completamente despejado, aun así sintió que se aproximaba una tormenta. No resultaba extraño sentirse de ese modo, desde hacía unos cuantos meses el clima había empeorado y los granos habían empezado a encarecerse a causa de la escasez. Mantener un reino no era tarea fácil, menos aún cuando se trataba de un pequeño pueblo marginal que se encontraba casi en las garras de una nación mayor como lo era Aladrin.<br>
             &nbsp;&nbsp;&nbsp;&nbsp;Con un suspiro intentó quitarse la pesadez del cuerpo y se dirigió hacia el Palacio de Máfil, por norma general no llevaba a su guardia de honor cuando salía a la plaza, Coran Fair no era una ciudad peligrosa en el sentido de tener bandidos o ladronzuelos, pero en su camino al palacio, mientras giraba por una callejuela para evitar las multitudes pudo atisbar por el rabillo de ojo como un sujeto la perseguía. Haciendo gala de un semblante imperturbable siguió caminando, fingiendo no haberse dado por enterada, mayor fue su temor cuando otro hombre salió al paso y la encerró. El segundo hombre tenia un garrote en la mano.</P>
@@ -317,10 +356,188 @@
             <hr>
         </div>
 
+        <!-- Sub-tab de textos -->    
         <div id="textos" class="subseccion">
-            <p> Sección en obras.</p>
-        </div>
 
+            <!--Menú de seleccion de los textos-->
+            <section id="textos_opciones" class="galeria_textos">
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto1')">
+                    <img src="imagenes/textos/Poemas.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Poemas
+                    </b></p>
+                </div>
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto2')">
+                    <img src="imagenes/textos/los_viajes_de_jacin_ram.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Los Viajes de Jacin Ram
+                    </b></p>
+                </div>
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto3')">
+                    <img src="imagenes/textos/tratados_entramado.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Tratados Académicos sobre el Entramado
+                    </b></p>
+                </div>
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto4')">
+                    <img src="imagenes/textos/tratados_canalizacion.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Tratados Académicos sobre la Canalización
+                    </b></p>
+                </div>
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto5')">
+                    <img src="imagenes/textos/tratados_luzysombra.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Tratados Académicos sobre la Luz y la Sombra
+                    </b></p>
+                </div>
+            </section>
+
+            <!--Secciones individuales de los textos-->
+            
+            <!--Poemas-->
+            <section id="texto1" class="detalle_textos">
+                <hr>
+                <h1 style="text-align: center;" class="titulo-fantasia"><b>Poemas</b></h1>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">Poema de los barcos - Por Stella Sol del Mañana</h2>
+                <p class="sin-sangria">
+                    llueve hielo y ceniza,<br>
+                    es la tierra supurante,<br>
+                    su grito es estridente,<br>
+                    nace nuestra la promesa<br>
+                    y nuestra es la vergüenza.<br>
+                    Levo anclas en mi barco<br>
+                    olas chocan en el casco<br>
+                    rema, llora, cree, baila<br>
+                    el viento es la brújula<br>
+                    para el mundo que busco.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">Recopilación de versos del final de la era del León de Jazmín - Por Anónimo</h2>
+                <h3 class="titulo-fantasia_nocentro">Abandono</h3>
+                <p class="sin-sangria">
+                    ¡Mi rosa! No me dejes en el lecho<br>
+                    que es tu roce lo que me da vida,<br>
+                    pues sin ti mi vida es un helecho<br>
+                    y en mi ser queda honda helada.<br>
+                    Sin tu amor estoy insatisfecho,<br>
+                    por ti ahora alzo mi espada,<br>
+                    sin ti el mundo clama por las llamas,<br>
+                    su combustible serán mis lágrimas.
+                </p>
+                <h3 class="titulo-fantasia_nocentro">Muere por amor</h3>
+                <p class="sin-sangria">
+                    Llora rey loco<br>
+                    desafía al mundo<br>
+                    muere por amor
+                </p>
+                <h3 class="titulo-fantasia_nocentro">Mentiras</h3>
+                <p class="sin-sangria">
+                    Reniega de las promesas<br>
+                    injusto es el destino<br>
+                    no lo vale ser humano<br>
+                    ya no quedan esperanzas
+                </p>
+                <hr>
+                <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
+            <!--Los viajes de Jacin Ram-->
+            <section id="texto2" class="detalle_textos">
+                <hr>
+                <h1 style="text-align: center;" class="titulo-fantasia"><b>Los Viajes de Jacin Ram</b></h1>
+                <hr>
+                <h2 class="titulo-fantasia">Historia III</h2>
+                <p style="text-align: center;" class="sin-sangria"><b>???<br>???<br>???</b></p>
+                <!--
+                <p>
+                    Desde aquella visita a las tierras occidentales de ultramar Jacin había quedado sin ganas de volver a navegar nunca más, aquel viaje le costó varios años y era una de las experiencias más duras a las que se había enfrentado desde que se hizo de aventurero, la gente creía que el mayor peligro del mar eran las bestias marinas que habitaban hacia el sur del Valle de Fariur, una pequeña península que sobresalía de la zona oriental del continente. Estaban equivocados. Al occidente existían bestias gigantes que cazaban con la mente, tormentas feroces e incluso momentos donde no había viento o marea que impulsara el barco.<br>
+                    A pesar de los malos recuerdos que esa experiencia le había generado con respecto al mar, Jacin se encontraba en la cubierta de un barco. Había zarpado desde una zona pantanosa al sur del continente donde anteriormente se alzaba la ciudad de Barridorn, desde hacía siglos, incluso milenios, que la ciudad era solo ruina, su objetivo se encontraba al occidente de su localización, una isla que los rumores decían era donde los traidores del agua huyeron tras el Bar’shan de la era anterior.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;El motivo por el que Jacin se dirigía a esa isla era sencillo, corría la leyenda que la primera capitana de su gente había bajado una estrella del cielo y con ello consiguió un gran poder, naturalmente la intención de Jacin no era conseguir un gran poder, solo era presenciar si ese hecho era posible.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Pasaron meses en alta mar sin mayores complicaciones que un poco de gorgojo en el grano que llevaban y una ocasional tormenta que agitaba las mareas, pero una noche cuando avistaron tierra algo golpeó el casco del barco sin el más mínimo aviso, el golpe fue tan fuerte que agrieto algunas tablas y el agua comenzó a filtrarse, el capitán del barco salió de su camarote y comenzó  gritar órdenes para evitar que el barco se hundiera. Jacin se asomo por la borda y vio como una sombra del mismo tamaño que el barco serpenteaba bajo el agua, inmediatamente corrió hacia su propio camarote, allí encontró sus espada, dos hojas relativamente cortas y que se curvaban hasta la punta, en eso otro golpe impactó, esta vez se sintió sobre la proa y empezaron a sonar múltiples alaridos, en un instante Jacin ya se encontraba de regreso en la cubierta y frente a él se alzaba una serpiente marina, la más grande que hubiera visto en toda su vida. Jacin desenvainó sus espadas, las cuchillas comenzaron a refulgir y de un salto alcanzó la cabeza de la criatura, le hizo un corte en el lateral pero en un rápido movimiento la serpiente se enroscó sobre sí misma y le dio un golpe que lo lanzo por los aires, momentos después Jacin se precipitaba hacia las fauces de la criatura. 
+                    Todo se congeló.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Jacin cayó sobre la cabeza de la serpiente congelada y se agarró de ella clavando sus espadas, cuando miro a su alrededor vio un barco que venía desde la isla que habían avistado, y en la punta del mascarón una mujer que sostenía una luz azulada y fría en sus manos.
+                </p>
+                -->
+                <hr>
+                <h2 class="titulo-fantasia">Historia IV</h2>
+                <p>
+                    Jacin cruzaba el valle de zaphir al norte de Munner Locar, montado en su caballo iba a máxima velocidad en dirección a Valamir, en su montura llevaba un arcón con un gran artefacto y a su espalda venían decenas de engendros de la sombra, en los últimos años se veían más y más, pero estos estaban muy cerca de las poblaciones humanas, y ahora lo persiguen por haberles robado el arcón.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Se había cruzado con el campamento de los depravados de la sombra por puro azar, pero sintió el gran poder del artefacto al interior del arcón y no pudo más que averiguar que era, cuando se percató que no había solo humanos fue cuando tomó la decisión de robarlo, al lado de los humanos habían criaturas monstruosas, engendros de la sombra, lo que catalogaba a los humanos como sin alma.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Al robar el arcón el caos estalló y las criaturas tomaron sus monturas para perseguirlo, llevaban ya varios kilómetros recorridos, pronto su propia montura llegaría al límite y caería rendida, tenía que urdir alguna treta que lo sacara de esta situación.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Más adelante había un pequeño riachuelo, ahí es donde ejecutaría su plan, antes de llegar, abrió discretamente el arcón y extrajo la pequeña estatua con forma de hombre del interior y al llegar a la orilla del riachuelo soltó el arcón mientras su montura saltaba la masa de agua, el cauce se llevó el contenedor de madera y la mayoría de los engendros se desvió, ahora solo lo seguían un par.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Desmontó y con una ágil pirueta desenvaino una de sus espadas, la clavó en el suelo y canalizó, de repente el suelo se hizo más blando y las patas de las monturas de sus perseguidores se vieron consumidas por el suelo, los jinetes volaron y cayeron cerca a Jacin, con un rápido movimiento la libreo del suelo y la volvió a clavar en uno de los cuerpos caídos, en lo que la liberaba nuevamente, el segundo de sus atacantes se levantó y de sus manos salió una bola de fuego, era un Jakkar, un engendro capaz de canalizar. Jacin lleno su espada de poder y con un corte detuvo la bola de fuego, con un gran salto redujo la distancia entres ambos y atacó, el Jakkar lo paró con su propia espada y contraatacó, el corte alcanzó uno de los brazos de Jacin, pero el impulso del ataque lo dejó descubierto y Jacin aprovechó el instante para dar la vuelta a su espada y clavarla en la espalda del Jakkar.<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Varias horas después Jacin desmontaba nuevamente, en esta ocasión para acampar, hacia ya un buen rato que nadie lo seguía y confiaba en que no lo encontraría, por fin era hora de descansar. Tardaría un par de días más en llegar a Valamir y dejar el pequeño hombrecillo de piedra en el almacén de reliquias de la Gran Academia.
+                </p>
+                <hr>
+                <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
+            <!--Sobre el Entramado-->
+            <section id="texto3" class="detalle_textos">
+                <hr>
+                <h1 style="text-align: center;" class="titulo-fantasia"><b>Tratados Académicos sobre el Entramado</b></h1>
+                <hr>
+                <h2 class="titulo-fantasia">Tratado sobre el paso del tiempo - Por Mur'Goran</h2>
+                <p>
+                    Dados los datos que tenemos, nos es posible llegar a la conclusión de que el mundo sufre una suerte de reinicio cada 1000 años exactos, este reinicio viene dado por un evento catastrófico de escala global.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Cuando me refiero a un reinicio no lo hago en un sentido literal, el reinicio no implica necesariamente la destrucción del mundo, si bien en algunas ocasiones ha sido así, se refiere a un proceso más profundo en el entramado de la realidad, si interpretamos la realidad como el resultado de la unión y enredo de las múltiples vidas, el reinicio sería entonces equivalente a desenredarlas, al realizarse este proceso, las vidas de las personas pueden realizar un nuevo patrón al enredarse.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Si bien las vidas al inicio de una era se encuentran totalmente libres de vínculos entre sí, suelen verse atraídas por las vidas con las que ya han interactuado previamente, esto supone entonces que habrá cierta repetibilidad entre eras.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;También es de suponer que si cada 1000 años se debe reiniciar la realidad, en caso de que no exista tal amenaza, la propia realidad se encargará de crear una catástrofe que lo permita, forzando las probabilidades que la componen.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">El Entramado de la realidad y otras peculiaridades - Por Mur'Goran</h2>
+                <p>
+                    Partiendo de la base planteada en otro de mis textos, «Tratado sobre el paso del tiempo» donde se establece que el entramado de la realidad es una maraña de vidas entrelazadas, me gustaría expandir ese concepto, pues en esa disertación hago una simplificación en la cual limitó el entramado a solo uno de sus aspectos, por lo cual es preciso profundizar más.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Sería más preciso definir el entramado como una imagen de las conexiones realizadas en el mundo, tanto de las vidas de las personas, como de los lugares que habitan y objetos con los que interactúan, es entonces cuando dichas conexiones se retuercen y forman la maraña que compone la realidad, pero en nuestro mundo existe un factor que había dejado en cuenta en mi tratado anterior, la magia.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;El entramado corresponde a las conexiones, pero esas conexiones requieren un medio, así como para atar dos puntos se requiere una cuerda, en el caso de la realidad es la magia la que funge de medio. Si el entramado está hecho de magia y no es un concepto ligado a una constante del universo entonces debería estar presente entre nosotros y ser visible y accesible para los canalizadores, pero esa afirmación es claramente comprobable como falsa, es por ello que se concluye que el entramado se encuentra en una estancia paralela a nuestro mundo, a la cual presumiblemente solo tienen acceso la Luz y la Sombra, y desde la cual el propio entramado influye en nuestra realidad visible.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;La afirmación del entramado de la realidad como una instancia paralela a la realidad visible, nos permite entender el entramado como un registro de lo ocurrido en la realidad visible, con la salvedad de que el propio registro tiene injerencia en los eventos que registra.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Este postulado es apoyado por el fenómeno conocido como Chispas, un evento posible de ver únicamente por los Margor debido a su afinidad natural con el mundo y que consiste en puntos de colores que saltan de un lado al otro como si de chispas se tratase, en la comunidad académica se ha llegado al consenso de que las chispas corresponden a un roce entre el entramado y la realidad visible, momento en el cual el entramado fuerza las probabilidades para que ocurran los eventos necesarios para el equilibrio de la realidad y que llamaremos «Nodos».<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Se acepta esa teoría como válida pues los avistamientos de chispas suelen estar vinculados a personas con un gran peso en el entramado y por ende en la historia y a los previamente mencionados Nodos, que son eventos de gran escala los cuales definen el devenir de una era.<br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>Nota:</b> En trabajos posteriores Mur’Goran adquiere un comportamiento errático y comienza a renegar de algunas cosas escritas en estas páginas, solicitando incluso la quema de la mayoría de copias.
+                </p>
+                <hr>
+                <h2><b></b></h2>
+                <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
+            <!--Sobre la Canalización-->
+            <section id="texto4" class="detalle_textos">
+            <hr>
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Tratados Académicos sobre la Canalización</b></h1>
+            <hr>
+            <h2 class="titulo-fantasia">Canalización y usos de la magia - Por Haram</h2>
+            <p>
+            A lo largo de este texto recopilaré algunas de las curiosidades acerca de la canalización de la magia que he podido experimentar durante mi estancia en la Gran Academia de Valar.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Lo primero que me gustaría señalar son las limitaciones, el caudal de magia que una persona es capaz de canalizar viene dado por el nacimiento, si de niño el limite esta dado por un pequeño hilo de magia, entonces siempre será ese, por el contrario, un niño que puede canalizar un un caudal mayor, a medida que entre y crezca podrá aumentar el caudal.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Esa primera limitante desemboca en la segunda, muchas habilidades requieren de caudal y por lo tanto son imposibles para muchos encauzadores, algunos ejemplos de esto son las curaciones avanzadas, volar o crear artefactos.
+            &nbsp;&nbsp;&nbsp;&nbsp;Hablando de habilidades, existe también límite en que se puede hacer, a día de hoy nadie en la historia documentada ha sido capaz de traer a alguien de vuelta a la vida salvo la Sombra, nadie ha sido capaz de adelantar o atrasar el tiempo y nadie ha sido capaz de controlar otras mentes.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Ahora es momento de mencionar algunas de las cosas que sí se pueden hacer, la primera es anclar la magia a objetos, similar a la creación de artefactos, pero con efectos diferentes, los artefactos permiten acciones específicas como por ejemplo generar cierto tipo de recursos o acceder a ciertos lugares, los objetos anclados permiten mantener el efecto de la canalización que se le aplique, por ejemplo, las capacidades mejoradas o un teletransporte a una región con un número limitado de usos.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;La segunda cosa que se puede hacer es manipular el terreno, es una capacidad muy poderosa y peligrosa, por lo cual requiere mucho cuidado, pero los canalizadores más hábiles están en capacidad de hacerlo.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Finalmente, una vez vi a un hombre vincularse a otra persona mediante la magia y de esta manera compartían algunas características, desconozco el funcionamiento, pero sí puedo afirmar que el vínculo los favorecía de algún modo.
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
+            <!--Sobre la Luz y la Sombra-->
+            <section id="texto5" class="detalle_textos">
+            <hr>
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Tratados Académicos sobre la Luz y la Sombra</b></h1>
+            <hr>
+            <h2 class="titulo-fantasia">Apuntes acerca de la batalla entre la Luz y la Sombra - Por Lan’Goran</h2>
+            <p>
+                A la hora de escribir esto me encuentro ya en el ocaso de mi vida, por lo mismo, he podido presenciar los muchos cambios por los cuales ha atravesado el mundo, y he tenido la fortuna o el infortunio de presenciar la Guerra de La Sombra.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;En los registros de los Margor se encontraban menciones acerca de la Sombra como una fuerza maligna que se ha encargado de esparcir su corrupción por el mundo, sin embargo, sus apariciones eran pocas y en contextos que habían relegado su valor al de un mito. No lo era.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Ya varios años después de la culminación de la guerra puedo afirmar que las descripciones de la Sombra como una corrupción que acecha el mundo no son ni remotamente cercanas a su verdadera maldad y visceralidad. Aunque he de dar unas profundas gracias al entramado de la realidad porque existe una fuerza que se le contrapone, los registros Margor la bautizan como la Luz.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Antes de exponer mi tesis quisiera hacer un breve repaso sobre la Guerra de la Sombra desde un punto de vista meramente académico, con el cual espero no ofender a los afectados.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;La guerra comenzó incluso antes de que lo supiéramos, para cuando nos dimos cuenta 5 personas que más tarde conoceríamos como los generales de la Sombra ya se encontraban en posiciones idóneas para promover el caos. El caos fue creciendo lentamente, las tensiones entre naciones se hacían más latentes y sin previo aviso, varias naciones marcharon a la guerra entre sí. La situación era tan crítica que los Margor citaron a un Concilio del Bosque y los Tukuk anunciaron su apoyo a algunas naciones, fue entonces cuando un humano empezó a ganar seguidores y su nombre resonó por todo el continente, este hombre fue derrotando ejércitos y anexando naciones bajo su estandarte, finalmente unificó las naciones en un pacto conocido como El Pacto del Imperio. Con todas las naciones unificadas ocurrió una gran batalla en contra de los ejércitos de engendros de la Sombra y salimos vencedores.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Al revisar registros históricos de diferentes naciones he llegado a la conclusión de que la guerra contra la sombra es un proceso que ha ocurrido en el pasado, los puntos listados en mi relato de la guerra componen un patrón que se ha visto en el pasado y que me lleva a pensar que esta batalla ha de ocurrir cíclicamente para mantener la estabilidad del entramado de la realidad. No obstante hay textos y relatos orales que me llevan a pensar que la victoria de la Luz no está garantizada y que la Sombra ha    ganado en algunos de los ciclos pasados.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;Que la Luz guíe tus actos y fortalezca tu alma.
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
+        </div>
+        
+        <!-- Sub-tab de enciclopedia -->    
         <div id="enciclopedia" class="subseccion">
             <p> Sección en obras.</p>
         </div>
@@ -328,6 +545,7 @@
 
     </div>
 
+    <!-- Tab de personajes -->  
     <div id="personajes" class="tab-content active">
 
         <section id="personajes_opciones" class="galeria_personajes">
@@ -375,6 +593,7 @@
 
     </div>
     
+    <!-- Tab de atlas -->  
     <div id="atlas" class="tab-content">
         
         <section id="atlas_opciones" class="galeria_atlas">
@@ -397,9 +616,95 @@
 
     </div>
 
+    <!-- Tab de actualización-->
+    <div id="actualizacion" class="tab-content">
+        <h1 style="text-align: center;" class="titulo-fantasia"><b>Actualizaciones</b></h1>
+        <hr>
+        <h2 style="text-align: center; "class="titulo-fantasia"> Actualización 2.3.1</h2>
+        <p class="sin-sangria">
+            ♦ Cambios de balance en los amuletos:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• El Amuleto de Canalización ahora solo funciona si está en la ranura de objetos.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• El Amuleto de Visión Nocturna ahora solo funciona si está en la ranura de collares.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• El Amuleto de Chatarra ahora solo funciona si está en la ranura de collares.<br>
+            ♦ Nueva misión semanal.<br>
+            ♦ Nueva rotación en la tienda de sombreros. 
+        </p>
+        <hr>
+        <h2 style="text-align: center; "class="titulo-fantasia"> Actualización 2.3</h2>
+        <p class="sin-sangria">
+            ♦ Nuevos NPC:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• Mineros.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• Faral Mor.<br>
+            ♦ Nuevos diálogos:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• Diálogos dinámicos: los dialogos cambian según con quien se haya hablado antes.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• 19 Dialogos nuevos.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• 1 Encargo.<br>
+            ♦ Nuevos sombreros:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• 3 modelos nuevos agregados al resourcepack.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• 2 nuevos sombreros en la tienda.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• Ahora los sombreros valen 48 diamantes.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• Los sombreros ahora tienen protección IV, reparación, respiración III y se comporta        como un casco de netherite.<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;• si quiere convertir un sombrero antiguo para tener esas estadisticas se debe pagar 15 diamantes a cambio.<br>
+            ♦ Se redujo el sonido del anillo solar.<br>
+            ♦ Nuevo Resourcepack.
+        </p>
+        <hr>
+        <h2 style="text-align: center; "class="titulo-fantasia"> Actualización 2.2.5</h2>
+        <p class="sin-sangria">
+            ♦ Ahora los amuletos avisan cuando están disponibles.<br>
+            ♦ Se corrigió el bug del Fragmento Helado por el cual se activaba constantemente.<br>
+            ♦ Se corrigió la compresión del archivo de audio de <i>La culebra</i> por lo cual ahora el audio es ligeramente menos ruidoso.<br>
+            ♦ Todo el código de las interacciones fue pasado a codigo externo del juego, con lo cual el rendimiento del servidor es mejor.<br>
+            ♦ El interacciones ahora se ejecutan ahora principalmente con clic derecho.<br>
+            ♦ La probabilidad de obtener <i>Polvo blanco</i> de Virgilio ahora es 2.5 veces mayor y se obtiene de a 5 items.<br>
+            ♦ Se corrigió el bug de textura de la interfaz de la mesa de herreria.<br>
+            ♦ Se corrigio el bug de cruzar un portal en Coran Fair por el que el jugador se quedaba en modo aventura.
+        </p>
+        <hr>
+        <h2 style="text-align: center;" class="titulo-fantasia"> Actualización 2.2</h2>
+        <p class="sin-sangria">
+            ♦ Actualizado el texturepack.
+            ♦ 1 Nuevo amuleto.
+            ♦ Nueva zona: Posada Hogar de los Barcos.
+            &nbsp;&nbsp;&nbsp;&nbsp;• Nueva mecánica: apuestas.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○ 3 apostadores diferentes oro, diamante y piedra negra áurea.
+            &nbsp;&nbsp;&nbsp;&nbsp;• Nueva canción: La Culebra - Atlantic Folk Trio.
+            ♦ 2 nueva tiendas:
+            &nbsp;&nbsp;&nbsp;&nbsp;• Tienda de gorros:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○ Gorro de granjero.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○ Gorro de cerdo.
+            &nbsp;&nbsp;&nbsp;&nbsp;• Tienda de luces:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○ Ranaluces.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ○ Esmeralda de pizarra profunda.
+            ♦ 2 auras nuevas:
+            &nbsp;&nbsp;&nbsp;&nbsp;• Aura de estrella.
+            &nbsp;&nbsp;&nbsp;&nbsp;• Aura de burbuja.
+            ♦ Muelle expandido:
+            &nbsp;&nbsp;&nbsp;&nbsp;• 3 barcos nuevos.
+            ♦ Nueva panorámica del menú.
+            ♦ Nuevo titulo en el menú:
+            &nbsp;&nbsp;&nbsp;&nbsp;• La era del mito: Coran Fair.
+            ♦ Mejoras a la brecha en el entramado pequeña.
+        </p>
+        <hr>
+        <h2 style="text-align: center;" class="titulo-fantasia"> Actualización 2.1 - 1.0</h2>
+        <p class="sin-sangria">
+            Para ver estas actualizaciónes consultar el grupo de Discord.
+        </p>
+        <hr>
+    </div>
+    
+    <!-- Resourcepack-->
+    <div id="resourcepack" class="tab-content-resourcepack">
+        <a href="descargas/La era del mito - resourcepack.zip" class="sub-button" download>
+            Descargar Resourcepack
+        </a>
+    </div>
+
+    <!-- Funciones de JavaScript -->  
     <script>
         function openTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
+            const tabs = document.querySelectorAll('.tab-content , .tab-content-resourcepack');
             const buttons = document.querySelectorAll('.tab-button');
 
             tabs.forEach(tab => tab.classList.remove('active'));
@@ -409,6 +714,7 @@
 
             event.target.classList.add('active');
         }
+
 
         function mostrarSeccion(id) {
 
@@ -462,6 +768,26 @@
             });
 
             document.getElementById("atlas_opciones").style.display = "grid";
+        }
+
+        function mostrarDetalle_textos(id){
+
+            document.getElementById("textos_opciones").style.display = "none";
+
+            document.querySelectorAll(".detalle_texttos").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        function volver_textos(){
+
+            document.querySelectorAll(".detalle_textos").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById("textos_opciones").style.display = "grid";
         }
 
     </script>
