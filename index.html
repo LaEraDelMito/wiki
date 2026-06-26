@@ -264,6 +264,10 @@
             display:none;
         }
 
+        .detalle_enciclopedia{
+            display:none;
+        }
+
         h2 {
             margin-top: 0;
         }
@@ -361,6 +365,12 @@
 
             <!--Menú de seleccion de los textos-->
             <section id="textos_opciones" class="galeria_textos">
+                <div class="tarjeta" onclick="mostrarDetalle_textos('texto0')">
+                    <img src="imagenes/textos/Diccionario.png" alt="">
+                    <p  class="sin-sangria" style="text-align: center;"><b>
+                        Diccionario
+                    </b></p>
+                </div>
                 <div class="tarjeta" onclick="mostrarDetalle_textos('texto1')">
                     <img src="imagenes/textos/Poemas.png" alt="">
                     <p  class="sin-sangria" style="text-align: center;"><b>
@@ -395,6 +405,84 @@
 
             <!--Secciones individuales de los textos-->
             
+            <!--Diccionario-->
+            <section id="texto0" class="detalle_textos">
+                <h1 style="text-align: center;" class="titulo-fantasia"><b>Diccionario de la antigua lengua</b></h1>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">B</h2>
+                <p class="sin-sangria">
+                    Ba: Roble.<br>
+                    Balhaon: Presagio de la Sombra.<br>
+                    Ber: Luz.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">C</h2>
+                <p class="sin-sangria">
+                    Coran: Mar.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">D</h2>
+                <p class="sin-sangria">
+                    Das: Aire.<br>
+                    Dashar: Viento.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">F</h2>
+                <p class="sin-sangria">
+                    Fair: Espejo.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">G</h2>
+                <p class="sin-sangria">
+                    Gar'shan: Nombre profetico de la Batalla del Fin de los Días.<br>
+                    Goran: ???.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">H</h2>
+                <p class="sin-sangria">
+                    Har: Fuerza.<br>
+                    Haren: Fortaleza.<br>
+                    Hom: Traer.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">J</h2>
+                <p class="sin-sangria">
+                    Ja: ???.<br>
+                    Jure: Sabiduría.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">L</h2>
+                <p class="sin-sangria">
+                    Lan: ???.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">M</h2>
+                <p class="sin-sangria">
+                    Ma: Voluntad.<br>
+                    Mandarb: Espada.<br>
+                    Margor: Hijo de la naturaleza.<br>
+                    Mu: ???.<br>
+                    Mur: ???.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">N</h2>
+                <p class="sin-sangria">
+                    N: Sufijo que indica liderzago.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">R</h2>
+                <p class="sin-sangria">
+                    Rar: ???.<br>
+                    ruar: ???.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">T</h2>
+                <p class="sin-sangria">
+                    Tukuk: Guardian de la roca.
+                </p>
+                <hr>
+                <button class="sub-button" onclick="volver_textos()">Regresar</button>
+            </section>
             <!--Poemas-->
             <section id="texto1" class="detalle_textos">
                 <hr>
@@ -539,10 +627,92 @@
         
         <!-- Sub-tab de enciclopedia -->    
         <div id="enciclopedia" class="subseccion">
-            <p> Sección en obras.</p>
+            
+            <section id="enciclopedia_opciones">
+                <h1 class="titulo-fantasia">Enciclopedia</h1>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">C</h2>
+                    <div onclick="mostrarDetalle_enciclopedia('canalizacion')" class="tarjeta">
+                        <p  class="sin-sangria">Canalización</p>
+                    </div>
+                <hr>
+                <h2 class="titulo-fantasia_nocentro">E</h2>
+                    <div onclick="mostrarDetalle_enciclopedia('entramado')" class="tarjeta">
+                        <p  class="sin-sangria">Entramado de la Realidad</p>
+                    </div>
+                <hr>
+            </section>
             <!--<p>
                 Debido a su fuerte conexión con la tierra y el mundo, algunos Margor poseen la capacidad de vislumbrar retazos del entramado colandose en la realidad visible. Este fenómeno está estrechamente relaciodano a momentos en los cuales el entramdo fuerza las probabiliades de modo que ocurran ciertos eventos necesarios para mantener el propio entramado en equilibrio, estos momentos son llamados «Nodos».
             </p>-->
+            <section id="a" class="detalle_enciclopedia">
+                abc
+                <hr>
+                <button class="sub-button" onclick="volver_enciclopedia()">Regresar</button>
+            </section>
+            <section id="canalizacion" class="detalle_enciclopedia">
+                <h1 class="titulo-fantasia">Canalización</h1>
+                <hr>
+                <h2 class="titulo-fantasia">Magia y su origen</h2>
+                <p>
+                    Canalizar es la acción de usar la magia, que es una fuerza fundamental en el mundo. La magia es el medio que compone el entramado y tanto hombres como mujeres pueden acceder a ella. Es mediante la magia que se construyen las conexiones que componen el entramado.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Al canalizar el cuerpo se llena de poder y una sensación de éxtasis se apodera de la mente, esa sensación va dejando secuelas en el canalizador que ansia moldear la magia. Tras mucho uso de la magia el canalizador empieza a sufrir deterioro en su cuerpo y su mente, hasta que finalmente se pierde en la locura, no obstante, no ocurre para todos de igual manera, algunos enloquecen antes, otros después, algunos incluso llegan a morir en el lecho sin padecer las consecuencias de canalizar.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Canalizadores</h2>
+                <p class="sin-sangria">
+                    • El Dragon de Plata.<br>
+                    • Sabios: Una organización que gira en torno a la Gran Academia de Magia de Valamir, tras años de estudio los que logran superar la prueba son reconocidos como Sabios. Son las personas más habilidosas en la canalización y normalmente fungen como protectores, diplomáticos y estudiosos.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">¿Quién puede canalizar?</h2>
+                <p>
+                    No todas las personas pueden canalizar, existen dos tipos de canalizadores, los innatos y los adquiridos. En el caso de los innatos el poder se desarrolla por sí solo, usualmente antes de los 16 años, sin embargo existen casos donde la habilidad despierta después de ese periodo, si bien son muy poco frecuentes. En el caso de los adquiridos, son personas en las que el don no se manifiesta por sí solo y podrían vivir toda su vida sin saber que poseen la capacidad, aún así pueden ser enseñados a canalizar, para identificarlos existe una prueba que revela si se poseen la capacidad.
+                </p>
+                <hr>
+                <button class="sub-button" onclick="volver_enciclopedia()">Regresar</button>
+            </section>
+
+            <section id="entramado" class="detalle_enciclopedia">
+                <h1 class="titulo-fantasia">El Entramado de la Realidad</h1>
+                <hr>
+                <h2 class="titulo-fantasia">El entramado</h2>
+                <p>
+                    El entramado es una instancia paralela a la realidad visible donde se manifiestan las conexiones de las vidas y de los objetos en el mundo, una instancia a la cual solo tienen acceso la Luz y la Sombra. Sin embargo, el entramado no es inerte, interfiere en la realidad visible para que se cumplan eventos de importancia para mantenerse en equilibrio, las intervenciones de mayor alcance se conocen como «Nodos».<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;El motivo por el cual el entramado ha de intervenir para forzar ciertos eventos está definido según su propia naturaleza de repetibilidad, los eventos que componen el entramado son en cierta medida ciclicos en periodos de 1000 años, es por ello que el entramado ha de forzar ciertos eventos a fin de conservar su repetibilidad.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Las conexiones</h2>
+                <p>
+                    El entramado es una red compleja de conexiones entre las vidas de las personas que habitan el mundo, el patrón de esas conexiones funciona como un registro probabilistico de las vidas de las personas, según sus conexiones en su vida se darán algunas situaciones impulsadas por el entramado.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Al terminar un ciclo de 1000 años, conocido como era, las conexiones en el entramado son liberadas, de modo que cada una de las vidas puede encontrar una nueva red de conexiones, pese a esto, existe un tendencia a que las conexiones más fuertes de eras pasadas se vuelvan a manifestar en eras futuras.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Las eras</h2>
+                <p>
+                    Las eras son periodos de 1000 años tras los cuales el entramado libera las conexiones, para impulsar el cambio de era debe existir un conlficto catastrófico, por la naturaleza de repetibilidad en el entramado es una situación que ocurre por si misma, pero en la cual interviene el entramado para garantizar su existencia y que ocurra en el tiempo de 1000 años exactos.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Las Nodos</h2>
+                <p>
+                    Los Nodos son eventos de maxima importancia en el entramado, eventos de tal relevancia que pueden cambiar el curso del entramado en si mismo, estos eventos pueden ocurrir de manera natural, como una conexion entre dos personas que se rompe o se crea y desencadena una serie de eventos de escala global, sin embargo, tambien pueden ocurrir por la interferencia del entramado, de modo que este garantice la repetibilidad entre eras o encauce el mundo a ello.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Algunas personas tienen tanto peso en el entramado que involuntariamente el entramado gira en torno a ellos y a su alrededor ocurren cosas improbables debido a la intervencion del entramado y su necesidad de mantenerse en equilibrio, esas personas reciben el nombre de Ha'samaran, que en la antigua lengua significa centro del tapiz.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Las chispas</h2>
+                <p>
+                    Los momentos en los que el entramado interviene son entendidos como roces entre la instancia en la que habita el entramado y la realidad visible. Los margor poseen una habilidad que les permite ver chispas de colores saltando en esos lugares y momentos en los que ocurre el roce, ese fenomeno se conoce como las Chispas.
+                </p>
+                <hr>
+                <h2 class="titulo-fantasia">Ha'samaran conocidos</h2>
+                <p class="sin-sangria">
+                    • Sir Calavir Munden (Era del Emperador del Mundo).<br>
+                    • Durel Vasheer (Era del Dios de la Espada).<br>
+                    • El Dragon de Plata.
+                </p>
+                <hr>
+                <button class="sub-button" onclick="volver_enciclopedia()">Regresar</button>
+            </section>
         </div>
 
 
@@ -574,6 +744,41 @@
                 </b></p>
             </div>
 
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj4')">
+                <img src="imagenes/personajes/Boramel.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Boramel
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj5')">
+                <img src="imagenes/personajes/Goramel.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Goramel
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj6')">
+                <img src="imagenes/personajes/Basin.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Basin
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj7')">
+                <img src="imagenes/personajes/Murel.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Murel
+                </b></p>
+            </div>
+
+            <div class="tarjeta" onclick="mostrarDetalle_personajes('pj8')">
+                <img src="imagenes/personajes/Syndei.png" alt="">
+                <p class="sin-sangria" style="text-align: center;"><b>
+                    Syndei
+                </b></p>
+            </div>
+
         </section>
 
         <!--Faral Mor-->
@@ -595,7 +800,7 @@
             </p>
             <h2 class="titulo-fantasia_nocentro"> Información política</h2>
             <p class="sin-sangria">
-                <b>Rango:</b> Noble de la casa Mor.<br>
+                <b>Rango:</b> Lord de la casa Mor.<br>
                 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                             Jefe de la compañía mercante Mor.<br>
                 <b>Afiliación:</b> Compañía mercante Mor.<br>
@@ -603,8 +808,8 @@
             </p>
             <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
             <p class="sin-sangria">
-                Malen Mor✞ (Padre)<br>
-                Kuri Mor✞ (Madre)
+                • Malen Mor✞ (Padre)<br>
+                • Kuri Mor✞ (Madre)
             </p>
             <hr>
             <h1 class="titulo-fantasia"> Historia</h1>
@@ -658,7 +863,7 @@
             </p>
             <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
             <p class="sin-sangria">
-                Halina Torrin ✞ (Madre)
+                • Halina Torrin ✞ (Madre)
             </p>
             <hr>
             <h1 class="titulo-fantasia"> Historia</h1>
@@ -709,8 +914,8 @@
             </p>
             <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
             <p class="sin-sangria">
-                Jure'n (padre)<br>
-                Ber'haren (abuelo)
+                • Jure'n (padre)<br>
+                • Ber'haren (abuelo)
             </p>
             <hr>
             <h1 class="titulo-fantasia"> Historia</h1>
@@ -736,6 +941,162 @@
             <button class="sub-button" onclick="volver_personajes()">Regresar</button>
         </section>
 
+        <!--Boramel-->
+        <section id="pj4" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Boramel</b></h1>
+            <hr>
+            <h1 class="titulo-fantasia"> Información general</h1>
+            <h2 class="titulo-fantasia_nocentro"> Información cronológica</h2>
+            <p class="sin-sangria">
+                <b>Primera aparición:</b> Saga de Coran Fair.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información biográfica</h2>
+            <p class="sin-sangria">
+                <b>Nombre completo:</b>  Boramel Parrel.<br>
+                <b>Nacionalidad:</b> Coran Fair.<br>
+                <b>Nacimiento:</b> Año 943 del Calendario del Dragón de Plata.<br>
+                <b>Edad:</b> 56 años.<br>
+                <b>Raza:</b> Humano.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información política</h2>
+            <p class="sin-sangria">
+                <b>Rango:</b> Lord de la casas Parrel.<br>
+                <b>Afiliación:</b> Casa Parrel.<br>
+                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                    Trono de Marfil.<br>
+                <b>Ocupación:</b> Cabeza de la casa Parrel.<br>
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
+            <p class="sin-sangria">
+                • Tyringail Torrin (Aliada)<br>
+                • Goramel Ferrol (Primo lejano)
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <!--Goramel-->
+        <section id="pj5" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Goramel</b></h1>
+            <hr>
+            <h1 class="titulo-fantasia"> Información general</h1>
+            <h2 class="titulo-fantasia_nocentro"> Información cronológica</h2>
+            <p class="sin-sangria">
+                <b>Primera aparición:</b> Saga de Coran Fair.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información biográfica</h2>
+            <p class="sin-sangria">
+                <b>Nombre completo:</b>  Goramel Ferrol.<br>
+                <b>Nacionalidad:</b> Coran Fair.<br>
+                <b>Nacimiento:</b> Año 950 del Calendario del Dragón de Plata.<br>
+                <b>Edad:</b> 49 años.<br>
+                <b>Raza:</b> Humano.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información política</h2>
+            <p class="sin-sangria">
+                <b>Rango:</b> Lord de la casa Ferrol<br>
+                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            Jefe de la compañia mercante Ferrol.<br>
+                <b>Afiliación:</b> Casa Ferrol.<br>
+                &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                                Compañia mercante Ferrol.<br>
+                <b>Ocupación:</b> Mercader.<br>
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
+            <p class="sin-sangria">
+                • Murel Dant (Mano derecha)<br>
+                • Boramel Parrel (Primo lejano)
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <!--Basin-->
+        <section id="pj6" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Basin</b></h1>
+            <hr>
+            <h1 class="titulo-fantasia"> Información general</h1>
+            <h2 class="titulo-fantasia_nocentro"> Información cronológica</h2>
+            <p class="sin-sangria">
+                <b>Primera aparición:</b> Saga de Coran Fair.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información biográfica</h2>
+            <p class="sin-sangria">
+                <b>Nombre completo:</b>  Basin Shinowa.<br>
+                <b>Nacionalidad:</b> Alforan.<br>
+                <b>Nacimiento:</b> Año 921 del Calendario del Dragón de Plata.<br>
+                <b>Edad:</b> 78 años.<br>
+                <b>Raza:</b> Humano.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información política</h2>
+            <p class="sin-sangria">
+                <b>Afiliación:</b> Basin.<br>
+                <b>Ocupación:</b> Erudito.<br>
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <!--Murel-->
+        <section id="pj7" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Murel</b></h1>
+            <hr>
+            <h1 class="titulo-fantasia"> Información general</h1>
+            <h2 class="titulo-fantasia_nocentro"> Información cronológica</h2>
+            <p class="sin-sangria">
+                <b>Primera aparición:</b> Saga de Coran Fair.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información biográfica</h2>
+            <p class="sin-sangria">
+                <b>Nombre completo:</b>  Murel Dant.<br>
+                <b>Nacionalidad:</b> Aladrin.<br>
+                <b>Nacimiento:</b> Año 960 del Calendario del Dragón de Plata.<br>
+                <b>Edad:</b> 39 años.<br>
+                <b>Raza:</b> Humano.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información política</h2>
+            <p class="sin-sangria">
+                <b>Afiliación:</b> Compañia mercante Ferrol.<br>
+                <b>Ocupación:</b> Jefe de barcos de la compañia mercante Ferrol.<br>
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
+            <p class="sin-sangria">
+                Goramel Ferrol (Jefe y Amigo)
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
+
+        <!--Syndei-->
+        <section id="pj8" class="detalle_personaje">
+            <h1 style="text-align: center;" class="titulo-fantasia"><b>Syndei</b></h1>
+            <hr>
+            <h1 class="titulo-fantasia"> Información general</h1>
+            <h2 class="titulo-fantasia_nocentro"> Información cronológica</h2>
+            <p class="sin-sangria">
+                <b>Primera aparición:</b> Saga de Coran Fair.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información biográfica</h2>
+            <p class="sin-sangria">
+                <b>Nombre completo:</b>  Syndei Escudo de Roble.<br>
+                <b>Nacionalidad:</b> Tierra prometida.<br>
+                <b>Nacimiento:</b> Año 957 del Calendario del Dragón de Plata.<br>
+                <b>Edad:</b> 42 años.<br>
+                <b>Raza:</b> Humano.
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Información política</h2>
+            <p class="sin-sangria">
+                <b>Rango:</b> Capitan de cubierta<br>
+                <b>Afiliación:</b> Mathar'vein.<br>
+                <b>Ocupación:</b> Marinero.<br>
+            </p>
+            <h2 class="titulo-fantasia_nocentro"> Vínculos</h2>
+            <p class="sin-sangria">
+                ??? (Capitana del Barco).
+            </p>
+            <hr>
+            <button class="sub-button" onclick="volver_personajes()">Regresar</button>
+        </section>
     </div>
     
     <!-- Tab de atlas -->  
@@ -926,7 +1287,7 @@
 
             document.getElementById("textos_opciones").style.display = "none";
 
-            document.querySelectorAll(".detalle_texttos").forEach(seccion => {
+            document.querySelectorAll(".detalle_textos").forEach(seccion => {
                 seccion.style.display = "none";
             });
 
@@ -940,6 +1301,26 @@
             });
 
             document.getElementById("textos_opciones").style.display = "grid";
+        }
+
+        function mostrarDetalle_enciclopedia(id){
+
+            document.getElementById("enciclopedia_opciones").style.display = "none";
+
+            document.querySelectorAll(".detalle_enciclopedia").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById(id).style.display = "block";
+        }
+
+        function volver_enciclopedia(){
+
+            document.querySelectorAll(".detalle_enciclopedia").forEach(seccion => {
+                seccion.style.display = "none";
+            });
+
+            document.getElementById("enciclopedia_opciones").style.display = "block";
         }
 
     </script>
